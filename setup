@@ -16,5 +16,6 @@ install_link() {
     ln -sfv -T $1 $2
 }
 
-install_link $PWD/nvim ~/.config/nvim
 install_link $PWD/bashrc ~/.bashrc
+install_link $PWD/kitty ~/.config/kitty
+install_link $PWD/nvim ~/.config/nvim
