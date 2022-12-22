@@ -1,9 +1,20 @@
 #!/bin/bash
 
-set -xe
+set -e
 
-if [[ -L "$HOME/.config/nvim" ]]; then
-	unlink $HOME/.config/nvim
-fi
+install_link() {
+    if [[ $# -ne 2 ]]; then
+        echo "invalid argument count: $#"
+        return 1
+    fi
 
-ln -s $PWD/nvim ~/.config/
+    if [[ -e $2 && ! -L $2 ]]; then
+        echo "destination file $2 exists but isn't a link; aborting to prevent overwriting"
+        return 1
+    fi
+
+    ln -sfv -T $1 $2
+}
+
+install_link $PWD/nvim ~/.config/nvim
+install_link $PWD/bashrc ~/.bashrc
