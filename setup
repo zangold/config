@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -xe
+
+if [[ -L "$HOME/.config/nvim" ]]; then
+	unlink $HOME/.config/nvim
+fi
+
+ln -s $PWD/nvim ~/.config/
