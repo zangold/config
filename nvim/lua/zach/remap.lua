@@ -63,3 +63,6 @@ vim.keymap.set("t", "<A-h>", "<C-\\><C-N><C-W>h")
 vim.keymap.set("t", "<A-l>", "<C-\\><C-N><C-W>l")
 vim.keymap.set("t", "<C-W>v", "<C-\\><C-N><C-W>v")
 vim.keymap.set("t", "<C-space>", "<C-\\><C-N>")
+
+vim.keymap.set("n", "<A-n>", ":cn<CR>")
+vim.keymap.set("n", "<A-p>", ":cp<CR>")

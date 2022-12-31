@@ -43,4 +43,13 @@ vim.cmd [[
     autocmd TermOpen * set nonumber
     autocmd TermOpen * startinsert
     au TermClose * call feedkeys("\<CR>")
+
+    if filereadable("Cargo.toml")
+        " F1 for build, F2 for test (in Rust)
+        compiler cargo
+        nnoremap <F1> :make build<CR>
+        nnoremap <F2> :make test<CR>
+        nnoremap <F3> :make fmt<CR>
+        nnoremap <F4> :make cranky<CR>
+    endif
 ]]
