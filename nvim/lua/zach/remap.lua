@@ -66,3 +66,9 @@ vim.keymap.set("t", "<C-space>", "<C-\\><C-N>")
 
 vim.keymap.set("n", "<A-n>", ":cn<CR>")
 vim.keymap.set("n", "<A-p>", ":cp<CR>")
+
+-- Fix dirty output when doing e.g., shift-enter in terminal mode.
+vim.keymap.set("t", "<S-Backspace>", "<Backspace>")
+vim.keymap.set("t", "<C-Backspace>", "<Backspace>")
+vim.keymap.set("t", "<S-Enter>", "<Enter>")
+vim.keymap.set("t", "<C-Enter>", "<Enter>")
