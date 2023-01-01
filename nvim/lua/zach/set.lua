@@ -45,11 +45,17 @@ vim.cmd [[
     au TermClose * call feedkeys("\<CR>")
 
     if filereadable("Cargo.toml")
-        " F1 for build, F2 for test (in Rust)
+        " F1 for build, F2 for test, F3 for auto-formatting, F4 for linting
         compiler cargo
         nnoremap <F1> :make build<CR>
         nnoremap <F2> :make test<CR>
         nnoremap <F3> :make fmt<CR>
         nnoremap <F4> :make cranky<CR>
+    elseif filereadable("meson.build")
+        set makeprg=ninja\ -C\ build
+        nnoremap <F1> :make<CR>
+        nnoremap <F2> :make test<CR>
+        nnoremap <F3> :make clang-format<CR>
+        nnoremap <F4> :make clang-tidy<CR>
     endif
 ]]
