@@ -127,6 +127,8 @@ export PATH=/usr/lib/ccache/bin:$PATH
 
 export EDITOR=nvim
 
+export LLVM_PROFILE_FILE=~/.default.profraw
+
 alias nvbuild-unsafe='nvbuild NV_CHECK_AUTOGEN_SOURCE=0'
 alias lock='gnome-screensaver-command -l'
 alias v='nvim -p'
