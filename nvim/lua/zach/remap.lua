@@ -72,3 +72,9 @@ vim.keymap.set("t", "<S-Backspace>", "<Backspace>")
 vim.keymap.set("t", "<C-Backspace>", "<Backspace>")
 vim.keymap.set("t", "<S-Enter>", "<Enter>")
 vim.keymap.set("t", "<C-Enter>", "<Enter>")
+
+vim.keymap.set("n", "<BS>", "X")
+
+-- go to beginning/end of line with B/E
+vim.keymap.set("n", "E", "$")
+vim.keymap.set("n", "B", "^")
